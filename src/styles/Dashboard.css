@@ -1,0 +1,48 @@
+/* src/styles/Dashboard.css */
+
+body {
+    background-color: #f6f7fa;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Rounded avatars inside cards */
+.card .rounded-circle {
+    background-color: #f1f3f5;
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+
+/* Custom challenge progress */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.progress-bar {
+    transition: width 0.6s ease;
+}
+
+/* Custom complete button */
+.btn-complete {
+    background-color: #22c55e;
+    border-color: #22c55e;
+    color: white;
+}
+
+.btn-complete:hover {
+    background-color: #16a34a;
+    border-color: #16a34a;
+}
