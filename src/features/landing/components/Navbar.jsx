@@ -1,5 +1,3 @@
-// src/features/landing/components/Navbar.jsx
-
 import { useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
 
@@ -9,20 +7,34 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
             <div className="container">
-                {/* Logo and Brand */}
-                <div className="d-flex align-items-center" style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+                <div
+                    className="d-flex align-items-center"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => navigate('/')}
+                >
                     <img src={logo} alt="Rewardify Logo" width="25" className="me-2" />
                     <span className="navbar-brand fw-bold mb-0 h1">Rewardify</span>
                 </div>
 
-                {/* Center Menu */}
-                <div className="collapse navbar-collapse justify-content-center">
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span className="navbar-toggler-icon" />
+                </button>
+
+                <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <a className="nav-link" href="#features">Features</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#about">About</a>
+                            <a className="nav-link" href="#api">API</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#about">Team</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#contact">Contact</a>
@@ -30,7 +42,6 @@ function Navbar() {
                     </ul>
                 </div>
 
-                {/* Auth Buttons */}
                 <div className="d-flex gap-2">
                     <button
                         className="btn btn-outline-primary rounded-3"

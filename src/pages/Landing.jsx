@@ -4,6 +4,8 @@ import '../styles/Landing.css';
 
 import Navbar from '../features/landing/components/Navbar.jsx';
 import heroImage from '../assets/hero-image.png';
+import apiImage from '../assets/api.png';
+import dbImage from '../assets/db.png';
 import dev1 from '../assets/dvolynov.png';
 import dev2 from '../assets/aostrikov.png';
 import dev3 from '../assets/vpinchuk.png';
@@ -14,19 +16,22 @@ function Landing() {
 
     return (
         <div className="landing-wrapper d-flex flex-column min-vh-100">
-            <Navbar />
+            <Navbar mobileMenuLeft />
 
             <div className="flex-grow-1 pt-5">
-                {/* Hero Section */}
-                <div className="container py-5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+                <div className="container py-5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 px-3">
                     <div className="text-center text-md-start">
                         <h1 className="fw-bold mb-3">Turn Best Habits<br />Into Daily Rewards</h1>
-                        <p className="text-muted mb-4">
+                        <p className="text-muted mb-4 fs-5">
                             Build lasting habits through AI-powered challenges and earn real-life rewards.
                         </p>
                         <div className="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
-                            <button className="btn btn-primary rounded-3 px-4" onClick={() => navigate('/signup')}>Get Started</button>
-                            <a className="btn btn-outline-primary rounded-3 px-4" href="https://github.com/dvolynov/Rewardify" target="_blank" rel="noreferrer">GitHub</a>
+                            <button className="btn btn-primary rounded-3 px-4" onClick={() => navigate('/signup')}>
+                                Get Started
+                            </button>
+                            <a className="btn btn-outline-primary rounded-3 px-4" href="https://github.com/dvolynov/Rewardify" target="_blank" rel="noreferrer">
+                                GitHub
+                            </a>
                         </div>
                     </div>
                     <div className="text-center d-none d-md-block">
@@ -34,10 +39,9 @@ function Landing() {
                     </div>
                 </div>
 
-                {/* Main Features */}
-                <div className="py-5">
-                    <div className="container text-center">
-                        <h2 className="fw-bold mb-5">Rewardify’s Technology Edge</h2>
+                <div id="features" className="py-5">
+                    <div className="container px-3">
+                        <h2 className="fw-bold mb-5 text-center">Rewardify’s Technology Edge</h2>
                         <div className="row g-4">
                             {[
                                 { icon: "🎯", title: "AI Challenge Generator", desc: "Generate smart, personalized daily tasks based on your goals." },
@@ -47,11 +51,13 @@ function Landing() {
                                 { icon: "⏰", title: "Time Context Engine", desc: "Tasks adapt to your day: morning, afternoon, evening." },
                                 { icon: "🔒", title: "Private & Secure", desc: "Your data remains protected, encrypted, and private." },
                             ].map((feature, idx) => (
-                                <div className="col-md-4" key={idx}>
-                                    <div className="p-4 rounded-4 shadow-sm bg-white h-100 d-flex flex-column align-items-center">
-                                        <div style={{ fontSize: '2.5rem' }}>{feature.icon}</div>
-                                        <h5 className="fw-bold mt-3">{feature.title}</h5>
-                                        <p className="text-muted small">{feature.desc}</p>
+                                <div className="col-12 col-md-6" key={idx}>
+                                    <div className="card p-3 rounded-4 shadow-sm d-flex flex-row align-items-center gap-3 w-100">
+                                        <div className="rounded-4 d-flex align-items-center justify-content-center flex-shrink-0 bg-light" style={{ width: 56, height: 56, fontSize: '1.8rem' }}>{feature.icon}</div>
+                                        <div>
+                                            <h6 className="fw-bold mb-1">{feature.title}</h6>
+                                            <p className="text-muted small mb-0">{feature.desc}</p>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
@@ -59,8 +65,70 @@ function Landing() {
                     </div>
                 </div>
 
-                {/* Developers Section */}
-                <div className="container py-5 mb-5">
+                <div id="api" className="py-5">
+                    <div className="container d-flex flex-column flex-md-row align-items-center gap-5 px-3">
+                        <div className="flex-grow-1 text-center text-md-start order-2 order-md-1" style={{ minWidth: '300px' }}>
+                            <h2 className="fw-bold text-center text-md-start">Powerful API Access</h2>
+                            <p className="text-muted fs-5 text-center text-md-start">
+                                Rewardify provides a flexible REST API built with FastAPI and PostgreSQL for seamless integrations and automation.
+                            </p>
+                            <ul className="list-unstyled d-flex flex-column gap-2">
+                                {[
+                                    "Authentication: OAuth2, JWT-based login for secure sessions.",
+                                    "Challenges: AI-powered dynamic generation and tracking.",
+                                    "Rewards: Manage and redeem your XP points effortlessly.",
+                                    "Wizard: Smart onboarding using OpenAI technologies.",
+                                    "Statistics: Live tracking of streaks, XP, and level progressions."
+                                ].map((item, idx) => (
+                                    <li key={idx} className="d-flex align-items-start gap-2 bg-light rounded-3 p-2 shadow-sm w-100">
+                                        <span style={{ fontSize: '1.5rem', lineHeight: '1' }}>✅</span>
+                                        <span className="text-muted small">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className="mt-3">
+                                <button className="btn btn-primary rounded-3 px-4">Explore API</button>
+                            </div>
+                        </div>
+                        <div className="flex-shrink-1 text-center order-1 order-md-2" style={{ minWidth: '300px' }}>
+                            <img src={apiImage} alt="Rewardify API" className="img-fluid rounded-4 shadow-sm img-api-db" />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="database" className="py-5">
+                    <div className="container d-flex flex-column flex-md-row align-items-center gap-5 px-3">
+                        <div className="flex-shrink-1 text-center order-1" style={{ minWidth: '300px' }}>
+                            <img
+                                src={dbImage}
+                                alt="Rewardify Database"
+                                className="img-fluid rounded-4 shadow-sm"
+                                style={{ width: '100%', maxWidth: '550px', height: 'auto', objectFit: 'contain' }}
+                            />
+                        </div>
+                        <div className="flex-grow-1 text-center text-md-start order-2" style={{ minWidth: '300px' }}>
+                            <h2 className="fw-bold text-center text-md-start">Robust Database Architecture</h2>
+                            <p className="text-muted fs-5 text-center text-md-start">
+                                Our PostgreSQL database is designed for efficiency, providing fast, scalable, and secure storage of all user, challenge, and reward data.
+                            </p>
+                            <ul className="list-unstyled d-flex flex-column gap-2">
+                                {[
+                                    "Users: Email, OAuth2 authentication, personal profiles.",
+                                    "Challenges: Customizable and AI-generated tasks tracking.",
+                                    "Rewards: XP-driven rewards and point redemption system.",
+                                    "Statistics: Real-time tracking of achievements, streaks, levels."
+                                ].map((item, idx) => (
+                                    <li key={idx} className="d-flex align-items-start gap-2 bg-light rounded-3 p-2 shadow-sm w-100">
+                                        <span style={{ fontSize: '1.5rem', lineHeight: '1' }}>✅</span>
+                                        <span className="text-muted small">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="about" className="container py-5 mb-5 px-3">
                     <h2 className="fw-bold text-center mb-5">Meet the Team</h2>
                     <div className="row g-4 justify-content-center">
                         {[
@@ -69,7 +137,7 @@ function Landing() {
                             { name: "Victor Pinchuk", role: "Backend Developer", img: dev3 },
                             { name: "Yaroslav Knyazev", role: "Database Developer", img: dev4 },
                         ].map((dev, idx) => (
-                            <div className="col-md-3" key={idx}>
+                            <div className="col-6 col-md-3" key={idx}>
                                 <div className="card p-3 rounded-4 shadow-sm text-center h-100">
                                     <img
                                         src={dev.img}
@@ -84,9 +152,15 @@ function Landing() {
                         ))}
                     </div>
                 </div>
+
+                <div id="contact" className="container pb-5 px-3">
+                    <h2 className="fw-bold text-center mb-4">Get in Touch</h2>
+                    <p className="text-muted text-center mb-0">
+                        Questions? Feedback? Collaboration? — <a href="mailto:dvolynov@gmail.com" className="text-decoration-none">Email us</a> anytime.
+                    </p>
+                </div>
             </div>
 
-            {/* Footer */}
             <footer className="bg-dark-subtle py-4 mt-4">
                 <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center small">
                     <div className="text-center text-md-start mb-2 mb-md-0">
