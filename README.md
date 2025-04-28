@@ -73,18 +73,6 @@ yarn start
 
 Runs on [http://localhost:3000](http://localhost:3000)
 
-## 📚 Main Pages Overview
-
-| Page         | URL Path             | Purpose                                   |
-|:-------------|:---------------------|:-----------------------------------------|
-| Landing      | `/`                   | Landing page with intro and CTA          |
-| Login        | `/login`              | User authentication                      |
-| Signup       | `/signup`             | User registration                        |
-| Dashboard    | `/app/challenge`      | User challenges overview                 |
-| Challenge    | `/app/challenge/:hash`| Detailed view and milestone tracking     |
-| Account      | `/app/account`        | Manage profile, password, and country    |
-| Help         | `/app/help`           | FAQ and help section                     |
-
 
 ## 🛠 Built With
 
