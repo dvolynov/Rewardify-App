@@ -76,12 +76,11 @@ Runs on [http://localhost:3000](http://localhost:3000)
 
 ## 🛠 Built With
 
-- React 18
+- React 19
 - React Router 6
 - Axios
 - Bootstrap 5
 - JavaScript ES6+
-- Vite / Create React App
 
 ## 📄 License
 
