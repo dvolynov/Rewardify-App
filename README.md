@@ -15,52 +15,24 @@ Seamlessly integrates with the Rewardify API backend.
 ## 📂 Project Structure
 
 ```
-src/
-├── api/
-│   └── (API connection utilities)
-├── assets/
-│   └── (images like logo and hero-image)
-├── components/
-│   └── ui/
-│       └── SidebarToggleButton.jsx
-├── features/
-│   ├── dashboard/
-│   │   ├── components/
-│   │   │   ├── LoadingIndicator.jsx
-│   │   │   ├── Sidebar.jsx
-│   │   │   └── SidebarToggleButton.jsx
-│   │   └── pages/
-│   │       ├── Account.jsx
-│   │       ├── Challenge.jsx
-│   │       ├── Detail.jsx
-│   │       ├── Help.jsx
-│   │       ├── Notifications.jsx
-│   │       ├── Stats.jsx
-│   │       └── Today.jsx
-│   ├── landing/
-│   │   ├── components/
-│   │   │   ├── Countries.jsx
-│   │   │   └── Navbar.jsx
-├── pages/
-│   ├── Dashboard.jsx
-│   ├── Landing.jsx
-│   ├── Login.jsx
-│   └── Signup.jsx
-├── styles/
-│   ├── Dashboard.css
-│   ├── Landing.css
-│   └── Sidebar.css
-├── utils/
-│   └── get_color.js
-├── App.jsx
-├── index.js
-├── reportWebVitals.js
-├── setupTests.js
-├── .env
-├── .gitignore
-├── package.json
-├── package-lock.json
-└── README.md
+├── public/                # Static public files
+├── src/                   # Source code
+├── ├── api/               # API connection utilities
+├── ├── assets/            # Static assets (images, icons)
+├── ├── components/        # Reusable UI components
+├── ├── features/          # Feature-specific components and logic
+├── ├── pages/             # Route-level pages
+├── ├── styles/            # CSS and styling files
+├── ├── utils/             # Utility functions and helpers
+├── ├── App.jsx            # Root React component
+├── ├── index.js           # Application entry point
+├── ├── reportWebVitals.js # Web vitals reporting
+├── └── setupTests.js      # Testing setup file
+├── .env                   # Environment variables
+├── .gitignore             # Git ignored files list
+├── package.json           # Project metadata and dependencies
+├── package-lock.json      # Exact versions of installed dependencies
+└── README.md              # Project documentation
 ```
 
 ## ⚙️ Setup Instructions
