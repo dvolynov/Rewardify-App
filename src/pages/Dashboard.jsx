@@ -9,12 +9,16 @@ import '../styles/Dashboard.css';
 
 import Sidebar from '../features/dashboard/components/Sidebar';
 import LoadingIndicator from '../features/dashboard/components/LoadingIndicator';
+
 import Challenge from '../features/dashboard/pages/Challenge';
 import Reward from '../features/dashboard/pages/Reward';
 import Detail from '../features/dashboard/pages/Detail';
 import Account from '../features/dashboard/pages/Account';
 import Help from '../features/dashboard/pages/Help';
+
 import { fetchUserData } from '../api/user';
+
+import logo from '../assets/logo.png';
 
 function Dashboard() {
     const [userData, setUserData] = useState(null);
@@ -109,6 +113,20 @@ function Dashboard() {
                     <Route path="help" element={<Help onMenuOpen={() => setMenuOpen(true)} />} />
                     <Route path="*" element={<Navigate to="/app/challenge" replace />} />
                 </Routes>
+
+                <div
+                    className="position-fixed bottom-0 end-0 m-3 m-md-5 m-sm-3 rounded-5 d-flex align-items-center gap-2 p-2"
+                    style={{
+                        opacity: 0.1,
+                        zIndex: 0
+                    }}
+                >
+                    <img
+                        src={logo} alt="Rewardify Logo" className="img-fluid"
+                        style={{ width: '24px', height: '24px' }}
+                    />
+                    <span className="fw-bold text-dark small">Rewardify</span>
+                </div>
             </div>
         </div>
     );

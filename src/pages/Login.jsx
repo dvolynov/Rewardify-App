@@ -31,9 +31,12 @@ function Login() {
         <div className="signup-wrapper d-flex flex-column flex-md-row bg-body-secondary min-vh-100">
             <div className="form-container d-flex flex-column align-items-center justify-content-center w-100 w-md-50 p-4 position-relative">
                 {/* Back Button */}
-                <div className="position-absolute top-0 start-0 m-3 bg-white rounded-3 shadow-sm px-3 py-2">
+                <div className="position-absolute top-0 start-0 m-3">
                     <button
-                        className="btn btn-link text-decoration-none text-dark d-flex align-items-center gap-2 p-0"
+                        className="btn btn-link text-decoration-none text-dark d-flex align-items-center gap-2 p-0 rounded-5 shadow-sm px-3 py-2"
+                        style={{ backgroundColor: 'white', transition: 'background-color 0.2s' }}
+                        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f0f0f0'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'white'; }}
                         onClick={() => navigate('/')}
                     >
                         <i className="bi bi-arrow-left" />

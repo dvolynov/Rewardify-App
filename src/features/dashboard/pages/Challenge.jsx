@@ -91,14 +91,14 @@ function Challenge({ onMenuOpen }) {
     };
 
     return (
-        <div className="challenge-container d-flex flex-column flex-grow-1" style={{ height: '100vh', minHeight: 0, overflow: 'hidden' }}>
+        <div className="challenge-container d-flex flex-column flex-grow-1" style={{ height: '100vh', minHeight: 0, overflow: 'hidden', zIndex: 1 }}>
             <div className="flex-shrink-0">
                 <div className="d-flex align-items-center justify-content-between mb-4">
                     <div className="d-flex align-items-center gap-1">
                         <SidebarToggleButton onClick={onMenuOpen} />
                         <h4 className="fw-bold m-0">Challenges</h4>
                     </div>
-                    <div className="card shadow-sm p-2 px-3 rounded-4 bg-white d-flex align-items-center">
+                    <div className="card shadow-sm p-2 px-3 rounded-5 bg-white d-flex align-items-center">
                         <span className="text-muted large">
                             Total: {loadingChallenges ? (
                             <div className="spinner-border text-primary" role="status" style={{ width: '1rem', height: '1rem', borderWidth: '2px' }} />

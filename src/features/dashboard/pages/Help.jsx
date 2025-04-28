@@ -54,7 +54,7 @@ function Help({ onMenuOpen }) {
     });
 
     return (
-        <div className="container m-0 p-0 d-flex flex-column gap-4">
+        <div className="container m-0 p-0 d-flex flex-column gap-4" style={{ zIndex: 1 }}>
             <div className="d-flex align-items-center justify-content-between gap-2">
                 <div className="d-flex align-items-center gap-1">
                     <SidebarToggleButton onClick={onMenuOpen} />
@@ -66,7 +66,7 @@ function Help({ onMenuOpen }) {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     style={{ maxWidth: 250 }}
-                    className="rounded-3"
+                    className="rounded-5"
                 />
             </div>
 

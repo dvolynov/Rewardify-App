@@ -90,11 +90,11 @@ function Detail() {
     const dateValue = new Date(created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
     return (
-        <div className="d-flex flex-column flex-grow-1" style={{ minHeight: 0 }}>
+        <div className="d-flex flex-column flex-grow-1" style={{ minHeight: 0, zIndex: 1 }}>
             <div className="flex-shrink-0 mb-4">
                 <div className="d-flex justify-content-between align-items-center">
                     <button
-                        className="btn btn-link text-decoration-none text-dark d-flex align-items-center gap-2 p-0 rounded-3 shadow-sm px-3 py-2"
+                        className="btn btn-link text-decoration-none text-dark d-flex align-items-center gap-2 p-0 rounded-5 shadow-sm px-3 py-2"
                         style={{ backgroundColor: 'white', transition: 'background-color 0.2s' }}
                         onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f0f0f0'; }}
                         onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'white'; }}
@@ -105,7 +105,7 @@ function Detail() {
                     </button>
                     {started ? (
                         <button
-                            className="btn btn-outline-danger rounded-3 d-flex align-items-center justify-content-center"
+                            className="btn btn-outline-danger rounded-5 d-flex align-items-center justify-content-center"
                             onClick={handleGiveUp}
                             disabled={joiningId !== null}
                             style={{ width: 90, height: 38 }}
@@ -118,7 +118,7 @@ function Detail() {
                         </button>
                     ) : (
                         <button
-                            className="btn btn-primary rounded-3 d-flex align-items-center justify-content-center"
+                            className="btn btn-primary rounded-5 d-flex align-items-center justify-content-center"
                             onClick={handleJoin}
                             disabled={joiningId !== null}
                             style={{ width: 135, height: 38 }}

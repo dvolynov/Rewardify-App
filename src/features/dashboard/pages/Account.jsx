@@ -150,7 +150,7 @@ function Account({ onUserDataUpdate, onMenuOpen }) {
     }
 
     return (
-        <div className="d-flex flex-column gap-4" style={{ height: '100vh', overflowY: 'auto' }}>
+        <div className="d-flex flex-column gap-4" style={{ height: '100vh', overflowY: 'auto', zIndex: 1 }}>
             <div className="d-flex align-items-center gap-1">
                 <SidebarToggleButton onClick={onMenuOpen} />
                 <h4 className="fw-bold m-0">Account</h4>

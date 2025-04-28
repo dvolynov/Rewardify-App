@@ -6,10 +6,11 @@ import '../../../styles/Sidebar.css';
 
 const menuItems = [
     // { label: 'Today', icon: 'bi-calendar-event', key: 'home' },
+    // { label: 'Notifications', icon: 'bi-bell', key: 'notifications' },
     { label: 'Challenges', icon: 'bi-flag', key: 'challenge' },
     { label: 'Rewards', icon: 'bi-gift', key: 'reward' },
-    // { label: 'Notifications', icon: 'bi-bell', key: 'notifications' },
     // { label: 'Your stats', icon: 'bi-bar-chart', key: 'stats' },
+    // { label: 'Wizard', icon: 'bi-magic', key: 'wizard' },
     { label: 'Account', icon: 'bi-gear', key: 'account' },
     { label: 'Help', icon: 'bi-exclamation-circle', key: 'help' },
 ];
@@ -27,18 +28,14 @@ function Sidebar({ user, onLogout, isOpen, onClose }) {
     return (
         <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
             <div className="sidebar-header d-flex align-items-center justify-content-between gap-3 mb-4">
-                <div className="d-flex align-items-center gap-2">
-                    {/* Mobile Close Button */}
+                <div className="w-100 d-flex align-items-center justify-content-between gap-2">
+                    <span className="fw-semibold">{user?.name || 'User'}</span>
                     <button
                         type="button"
-                        className="btn btn-light border rounded-3 me-1 d-flex align-items-center justify-content-center p-2 d-md-none"
-                        style={{ width: 36, height: 36 }}
+                        className="btn btn-close d-md-none"
                         onClick={onClose}
                     >
-                        <i className="bi bi-x-lg" style={{ fontSize: '1rem' }} />
                     </button>
-
-                    <span className="fw-semibold">{user?.name || 'User'}</span>
                 </div>
             </div>
 
